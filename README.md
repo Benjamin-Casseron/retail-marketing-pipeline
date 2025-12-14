@@ -14,7 +14,7 @@ The project emphasizes:
 ## Current Status
 ✅ Data ingestion pipeline implemented  
 ✅ Raw data schema fully inspected and documented  
-⏳ Data cleaning pipeline (in progress)  
+✅ Data cleaning pipeline (in progress)  
 ⏳ Analytical modeling and dashboarding (planned)
 
 ## Project Structure
