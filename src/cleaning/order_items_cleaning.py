@@ -30,7 +30,7 @@ def clean_order_items(order_items_path: Path) -> pd.DataFrame:
         "shipping_limit_date",
         "price",
         "freight_value",
-}
+    }
     
     missing_columns = expected_columns - set(df.columns)
     if missing_columns:

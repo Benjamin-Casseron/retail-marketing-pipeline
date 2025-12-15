@@ -31,7 +31,7 @@ def clean_orders(products_path: Path) -> pd.DataFrame:
         "order_delivered_carrier_date",
         "order_delivered_customer_date",
       "order_estimated_delivery_date",
-}
+    }
     
     missing_columns = expected_columns - set(df.columns)
     if missing_columns:
@@ -43,7 +43,7 @@ def clean_orders(products_path: Path) -> pd.DataFrame:
         "order_delivered_carrier_date",
         "order_delivered_customer_date",
         "order_estimated_delivery_date",
-]
+    ]
     # Remove rows with invalid timestamps
     for col in timestamp_cols:
         df[col] = pd.to_datetime(df[col], errors="coerce")
@@ -57,7 +57,7 @@ def clean_orders(products_path: Path) -> pd.DataFrame:
     ("order_purchase_timestamp", "order_approved_at"),
     ("order_approved_at", "order_delivered_carrier_date"),
     ("order_delivered_carrier_date", "order_delivered_customer_date"),
-]
+    ]
     # Remove rows with inconsistent/impossible date sequences
 
     invalid_date_mask = False
