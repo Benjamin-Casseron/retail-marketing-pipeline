@@ -43,6 +43,10 @@ def clean_payments(payments_path: Path):
     # Normalize payment_type values to lowercase and strip whitespace
     df["payment_type"] = df["payment_type"].str.strip().str.lower()
 
+    # Replace 'not_defined' payment types with NaN
+    df.loc[df["payment_type"] == "not_defined", "payment_type"] = pd.NA
+
+
 
     return df
 
