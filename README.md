@@ -17,7 +17,7 @@ The project emphasizes:
 ✅ Product-level cleaning and normalization 
 ✅ Orders cleaning with delivery duration and delay metrics 
 ✅ Order_items cleaning (row level hygiene)
-⏳ Data cleaning pipeline (in progress) 
+✅ Payments cleaning
 ⏳ Analytical modeling and dashboarding (planned)
 
 ## Project Structure
