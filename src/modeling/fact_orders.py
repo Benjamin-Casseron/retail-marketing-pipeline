@@ -26,7 +26,14 @@ def fact_orders(orders_df: pd.DataFrame, order_items_df: pd.DataFrame, payments_
     fact_df[numeric_fill_zero] = fact_df[numeric_fill_zero].fillna(0)
     # Fill NaN values in numeric columns with 0
 
-    fact_df["used_voucher"] = fact_df["used_voucher"].fillna(False)
+    fact_df["used_voucher"] = (
+    fact_df["used_voucher"]
+    .astype("boolean")
+    .fillna(False)
+    )
+
+
+
 
     # Convert used_voucher to boolean
 
