@@ -16,6 +16,7 @@ The project emphasizes:
 ✅ Raw data schema fully inspected and documented  
 ✅ Product-level cleaning and normalization 
 ✅ Orders cleaning with delivery duration and delay metrics 
+✅ Order_items cleaning (row level hygiene)
 ⏳ Data cleaning pipeline (in progress) 
 ⏳ Analytical modeling and dashboarding (planned)
 
