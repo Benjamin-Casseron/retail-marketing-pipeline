@@ -2,16 +2,22 @@ import subprocess
 import sys
 
 PIPELINE_STEPS = [
-    "src/ingestion/ingest_olist.py",
+    "src/ingestion/ingest_olist.py", # Ingest raw data
 
     "src/cleaning/products_cleaning.py",
     "src/cleaning/orders_cleaning.py",
     "src/cleaning/order_items_cleaning.py",
     "src/cleaning/payments_cleaning.py",
+    # Clean for fact tables
+
+    "src/cleaning/customers_cleaning.py",
+    # Dimension tables cleaning
 
     "src/modeling/order_items_aggregation.py",
     "src/modeling/payments_aggregation.py",
     "src/modeling/fact_orders.py",
+    # Fact tables modeling
+    
 ]
 
 def run_pipeline():

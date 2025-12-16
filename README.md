@@ -4,7 +4,7 @@
 
 This project implements a complete, reproducible analytics pipeline using the **Olist Brazilian e-commerce dataset**.
 
-The objective is to transform raw transactional data into a **business-ready order-level fact table**, suitable for BI tools (Power BI, Tableau) and analytical use cases such as marketing performance, customer behavior, and delivery operations.
+The objective is to transform raw transactional data into a **business-ready order-level fact table**, suitable for BI tools (Power BI, Tableau) and analytical use cases such as marketing performance, order-level customer segmentation, and delivery operations.
 
 The project follows **analytics engineering best practices**:
 - clear separation of raw, cleaned, and modeled data
@@ -14,6 +14,18 @@ The project follows **analytics engineering best practices**:
 - strong documentation and reproducibility
 
 ---
+
+## Current Status
+✅ Data ingestion pipeline implemented  
+✅ Raw data schema fully inspected and documented  
+✅ Product-level cleaning and normalization  
+✅ Orders cleaning with delivery duration and delay metrics  
+✅ Order items cleaning and aggregation  
+✅ Payments cleaning and aggregation  
+✅ Fact orders table modeled at order granularity  
+✅ Customers dimension cleaned for BI slicing  
+⏳ Power BI dashboarding (in progress)
+
 
 ## Data Source
 
@@ -28,31 +40,29 @@ The project follows **analytics engineering best practices**:
 ```text
 retail-marketing-pipeline/
 ├── data/
-│ ├── raw/
-│ │ └── olist/ # Raw source data (not committed)
-│ ├── processed/
-│ │ └── olist/ # Cleaned, row-level datasets
-│ └── modeled/
-│ └── olist/ # Modeled, aggregated tables (BI-ready)
-│
+│   ├── raw/                # Raw data (not committed)
+│   ├── processed/          # Cleaned datasets (not committed)
+│   └── modeled/            # Aggregated / fact tables (not committed)
 ├── notebooks/
-│ └── 01_schema_inspection.ipynb # One-time schema exploration & documentation
-│
+│   └── 01_schema_inspection.ipynb
 ├── src/
-│ ├── ingestion/
-│ │ └── ingest_olist.py # Dataset ingestion via Kaggle API
-│ ├── cleaning/
-│ │ ├── products_cleaning.py
-│ │ ├── orders_cleaning.py
-│ │ ├── order_items_cleaning.py
-│ │ └── payments_cleaning.py
-│ └── modeling/
-│ ├── order_items_aggregation.py
-│ ├── payments_aggregation.py
-│ └── fact_orders.py
-│
+│   ├── ingestion/
+│   │   └── ingest_olist.py
+│   ├── cleaning/
+│   │   ├── customers_cleaning.py
+│   │   ├── orders_cleaning.py
+│   │   ├── products_cleaning.py
+│   │   ├── payments_cleaning.py
+│   │   └── order_items_cleaning.py
+│   └── modeling/
+│       ├── order_items_aggregation.py
+│       ├── payments_aggregation.py
+│       └── fact_orders.py
+├── powerbi/
+│   └── retail_marketing_report.pbix   # Power BI report (not committed)
 ├── requirements.txt
 └── README.md
+
 ```
 
 ---
@@ -85,6 +95,11 @@ Outputs are stored in `data/modeled/olist/`.
 
 ## Final Output: Fact Orders Table
 
+## Power BI
+The Power BI report (`.pbix`) is not committed to version control.
+PBIX files are binary and environment-specific.  
+The report can be rebuilt by loading the modeled CSV files from `data/modeled/`.
+
 **File**
 data/modeled/olist/fact_orders.csv
 
@@ -104,6 +119,7 @@ data/modeled/olist/fact_orders.csv
 - `delivery_delay_days`
 
 This table is designed for **direct consumption in Power BI** or SQL-based analytics workflows.
+
 
 ### Run the Full Pipeline
 

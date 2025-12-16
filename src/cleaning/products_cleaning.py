@@ -57,6 +57,7 @@ def clean_products(products_path: Path, category_translation_path: Path) -> pd.D
     "product_height_cm",
     "product_width_cm",
     ]
+    
     # Remove rows with non-positive values in dimension columns
     invalid_mask = (
     (df[dimension_cols] <= 0) |
@@ -72,6 +73,7 @@ def clean_products(products_path: Path, category_translation_path: Path) -> pd.D
     "product_description_lenght",
     "product_photos_qty",
     ]
+
     # Fill missing metadata columns with 0
     df[metadata_cols] = df[metadata_cols].fillna(0)
 
