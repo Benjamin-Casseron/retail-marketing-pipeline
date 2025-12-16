@@ -15,6 +15,15 @@ The project follows **analytics engineering best practices**:
 
 ---
 
+## Power BI Report — Overview
+
+Below is the first iteration of the executive overview page of the Power BI report, built on the modeled
+`fact_orders` table and canonical DAX measures.
+
+![Power BI Overview](outputs/reports/01_overview.png)
+
+---
+
 ## Current Status
 ✅ Data ingestion pipeline implemented  
 ✅ Raw data schema fully inspected and documented  
@@ -24,8 +33,10 @@ The project follows **analytics engineering best practices**:
 ✅ Payments cleaning and aggregation  
 ✅ Fact orders table modeled at order granularity  
 ✅ Customers dimension cleaned for BI slicing  
+✅ Modeled the date dimension table
 ⏳ Power BI dashboarding (in progress)
 
+---
 
 ## Data Source
 
@@ -58,6 +69,9 @@ retail-marketing-pipeline/
 │       ├── order_items_aggregation.py
 │       ├── payments_aggregation.py
 │       └── fact_orders.py
+├───outputs/
+│    └── reports/
+│        └── 01_overview.png (report executive page)
 ├── powerbi/
 │   └── retail_marketing_report.pbix   # Power BI report (not committed)
 ├── requirements.txt
