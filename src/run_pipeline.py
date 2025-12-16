@@ -11,7 +11,8 @@ PIPELINE_STEPS = [
     # Clean for fact tables
 
     "src/cleaning/customers_cleaning.py",
-    # Dimension tables cleaning
+    "src/modeling/date_dimension.py",
+    # Dimension tables modeling
 
     "src/modeling/order_items_aggregation.py",
     "src/modeling/payments_aggregation.py",
