@@ -57,4 +57,6 @@ if __name__ == "__main__":
     date_dim_df = build_date_dimension(fact_orders_path)
 
     output_path = MODELED_DATA_DIR / "dim_date.csv"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    
     date_dim_df.to_csv(output_path, index=False)

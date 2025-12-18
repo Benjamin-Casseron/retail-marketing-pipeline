@@ -35,4 +35,6 @@ if __name__ == "__main__":
 
     
     output_path = MODELED_DATA_DIR / "payments_aggregated.csv"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    
     agg_df.to_csv(output_path, index=False)

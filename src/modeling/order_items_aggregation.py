@@ -28,4 +28,6 @@ if __name__ == "__main__":
     agg_df = order_items_aggregation(agg_df)
     
     output_path = MODELED_DATA_DIR / "order_items_aggregated.csv"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    
     agg_df.to_csv(output_path, index=False)

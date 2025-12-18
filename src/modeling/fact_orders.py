@@ -83,5 +83,7 @@ if __name__ == "__main__":
     MODELED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     output_path = MODELED_DATA_DIR / "fact_orders.csv"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    
     fact_df.to_csv(output_path, index=False)
 
